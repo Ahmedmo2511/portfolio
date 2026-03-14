@@ -8,6 +8,14 @@ import Contact from "../components/Contact";
 import ScrollToTop from "../components/ScrollToTop";
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <>
       <Navbar />
