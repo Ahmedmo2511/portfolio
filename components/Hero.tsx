@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, cubicBezier } from "framer-motion";
+
 import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from "react-icons/fi";
 
 export default function Hero() {
@@ -22,7 +23,7 @@ export default function Hero() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: cubicBezier(0.25, 0.46, 0.45, 0.94) } },
   };
 
   const scrollToSection = (id: string) => {

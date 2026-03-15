@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, cubicBezier } from "framer-motion";
 import { FiBookOpen, FiAward } from "react-icons/fi";
 
 const universities = [
@@ -29,7 +29,7 @@ const universities = [
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 60 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: cubicBezier(0.25, 0.46, 0.45, 0.94) } },
 };
 
 const cardVariants = {
@@ -38,7 +38,7 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.6, delay: i * 0.2, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { duration: 0.6, delay: i * 0.2, ease: cubicBezier(0.25, 0.46, 0.45, 0.94) },
   }),
 };
 
